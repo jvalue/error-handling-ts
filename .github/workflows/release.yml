@@ -1,0 +1,30 @@
+name: Publish
+
+on:
+  release:
+    types: [ created ]
+
+# https://docs.github.com/en/actions/guides/publishing-nodejs-packages
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Setup .npmrc file to publish to GitHub Packages
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          always-auth: true
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.JVALUE_PAT }}
+      - run: npm run transpile
+      - run: npm publish --tag alpha
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
