@@ -10,7 +10,12 @@
 		"baseUrl": ".",
 		"lib": ["es2019"],
 		"outDir": "dist",
-		"declaration": true
+		"declaration": true,
+		"paths": {
+			"matchers/*": [
+				"dist/matchers/*"
+			] 
+		}
 	},
 	"include": ["src/**/*.ts"]
 }

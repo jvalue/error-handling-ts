@@ -8,7 +8,7 @@ import {
 	printWithType,
 } from 'jest-matcher-utils';
 
-import { Result, isResult } from './Result';
+import { Result, isResult } from '..';
 
 /**
  * Custom jest matcher for Result.
