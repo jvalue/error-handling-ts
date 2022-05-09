@@ -1,0 +1,35 @@
+{
+	"name": "@jvalue/error-handling-ts",
+	"version": "0.0.1",
+	"description": "A simple error handling library",
+	"main": "dist/index.js",
+	"scripts": {
+		"transpile": "rimraf dist && tsc",
+		"test": "jest --colors --verbose",
+		"test:watch": "jest --watch",
+		"lint": "eslint src",
+		"lint-ci": "eslint src --max-warnings=0"
+	},
+	"devDependencies": {
+		"@types/jest": "^26.0.22",
+		"@typescript-eslint/eslint-plugin": "^4.16.1",
+		"@typescript-eslint/parser": "^4.16.1",
+		"eslint": "^7.21.0",
+		"eslint-config-prettier": "^8.1.0",
+		"eslint-config-standard-with-typescript": "^20.0.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-jest": "^24.3.2",
+		"eslint-plugin-prettier": "^3.3.1",
+		"jest": "^26.6.3",
+		"prettier": "^2.2.1",
+		"ts-jest": "^26.5.4",
+		"typescript": "^4.5.5"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jvalue/error-handling-ts.git"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	}
+}
