@@ -2,6 +2,54 @@
 
 A simple library for error handling, used in the JValue projects.
 
+## Examples
+
+### Results
+
+Use `ResultLike` to express `Success` and `Failure` of an operation.
+
+```javascript
+const s = success(123);
+const f = failure('My custom failure message');
+```
+
+This enables error handling without try/catch.
+
+```javascript
+const result = someOperationReturningAResultLike();
+if (result.isSuccess()) {
+	const data = result.data();
+	// do sth with the data
+} else {
+	const errorMsgs = result.errors();
+	// do sth with the error messages
+}
+```
+All recoverable cases should be expressed explicitly as a `ResultLike`.
+
+### Options
+
+Use `OptionLike` to express `Some` and `None` of a type.
+
+```javascript
+const s = some(123);
+const n = none();
+```
+
+This enables using syntactic sugar for default values.
+
+```javascript
+const option = someOperationReturningAnOptionLike();
+const result = option.orElse('Default value');
+```
+
+### Mapping/Filtering
+
+`ResultLike` and `OptionLike` both support the methods `map`, `flatMap`, and `filter`.
+
+TODO
+
+
 ## Install
 
 * Download dependencies: `npm install`
