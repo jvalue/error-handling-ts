@@ -1,5 +1,7 @@
 # JValue TypeScript Error Handling
 
+**Note:** This library is currently **NOT** in use and was replaced by [@sniptt/monads](https://github.com/sniptt-official/monads) which provides similar functionality.
+
 A simple library for error handling, used in the JValue projects.
 
 ## Examples
